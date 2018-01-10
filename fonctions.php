@@ -1,8 +1,31 @@
 <?php
 
+//calcule le colume d'u cube en fonction de l'arete
 function calculCube($arete)
 {
-    $arete * $arete * $arete;
+    return $arete * $arete * $arete;
 }
 
-echo calculCube(4);
+$volume = calculCube(4);
+
+echo 'volume = '.$volume.'<br /><br />';
+
+//Quelques ex. de fonctions
+
+//strlen, calcule la longueur d'une chaîne
+
+//str_replace, remplace le caractere passé en paramatre 1 par le 2
+$ma_variable = str_replace('m', 'p', 'bim bam boum');
+echo $ma_variable.'<br /><br />';
+
+//str_shuffle melange les lettres aléatoirement
+$chaine = 'Everyday I\'m shuffling !';
+$chaine = str_shuffle($chaine);
+echo $chaine.'<br /><br />';
+
+//strtolower renvoie une chaine de caractère en minuscules
+$chaine = 'JE VAIS RETRECIR !';
+$chaine = strtolower($chaine);
+echo $chaine.'<br /><br />';
+
+//strtoupper pour renvoyer en majuscules
