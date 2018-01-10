@@ -9,7 +9,10 @@
     $prenoms[] = 'Ben';
 
     //affiche le prénom à la position demandée
-    echo $prenoms[3];
+    echo $prenoms[1];
+    echo '<pre>';
+    var_dump($prenoms);
+    echo '</pre>';
 
 ?>
 
@@ -64,7 +67,7 @@
 
     echo '<br />';
 
-    foreach ($coordonnees as $key => $element)
+    foreach($coordonnees as $key => $element)
     {
         echo '['.$key.'] vaut '.$element.'<br />';
     }
@@ -72,7 +75,7 @@
     //Avec 'print_r' pour debogage
     //La balise 'pre' représente le texte préformaté (pour un meilleur affichage) 
     echo '<pre>';
-    print_r($coordonnees);
+        print_r($coordonnees);
     echo '</pre>';
 
 
@@ -87,5 +90,9 @@
     //Verifier si une valeur existe avec in_array('element', $array)
     if(in_array('Dupont', $coordonnees))
     {
-        echo "La valeur demandée existe";
+        echo "La valeur demandée existe</br>";
     }
+
+    //récupérer la clé d'une valeur dans l'array
+    $cle = array_search('Dupont', $coordonnees);//sans clé, donne la position/case
+    echo 'la clé est "'.$cle.'"';
