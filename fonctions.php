@@ -1,15 +1,5 @@
 <?php
 
-//calcule le colume d'u cube en fonction de l'arete
-function calculCube($arete)
-{
-    return $arete * $arete * $arete;
-}
-
-$volume = calculCube(4);
-
-echo 'volume = '.$volume.'<br /><br />';
-
 //Quelques ex. de fonctions
 
 //strlen, calcule la longueur d'une chaîne
@@ -29,3 +19,13 @@ $chaine = strtolower($chaine);
 echo $chaine.'<br /><br />';
 
 //strtoupper pour renvoyer en majuscules
+
+//focntion calcule le volume d'un cube en fonction de l'arete
+function calculCube($arete)
+{
+    return $arete * $arete * $arete;
+}
+
+$volume = calculCube(4);
+
+echo 'volume = '.$volume.'<br /><br />';
