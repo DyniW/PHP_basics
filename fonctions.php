@@ -20,7 +20,7 @@ echo $chaine.'<br /><br />';
 
 //strtoupper pour renvoyer en majuscules
 
-//fonction calcule le volume d'un cube en fonction de l'arete
+//fonction qui calcule le volume d'un cube en fonction de l'arete
 function calculCube($arete)
 {
     return $arete * $arete * $arete;
