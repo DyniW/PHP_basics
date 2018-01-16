@@ -7,14 +7,17 @@ $_SESSION['prenom'] = 'Jean';
 $_SESSION['nom'] = 'Dupont';
 $_SESSION['age'] = 24;
 
-setcookie('pseudo', 'Jean', time() + 3600);
+//creation d'un cookie(nom, valeur, date d'expiration, ..., actrivation du mode httpOnly pour réduire les risques de failles XSS) AVANT d'écrire du code HTML
+setcookie('pseudo', 'Jean', time() + 3600, null, null, false, true);
+
+setcookie('pays', 'France', time() + 3600, null, null, false, true); // On écrit un autre cookie...
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Titre de ma page</title>
+        <title>Ma page</title>
     </head>
 
     <body>

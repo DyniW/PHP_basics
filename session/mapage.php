@@ -2,4 +2,4 @@
 
 session_start();
 
-echo 'Bonjour '.$_SESSION['prenom'].' !';
+echo 'Bonjour '.$_COOKIE['pseudo'].' !<br />Localisation : '.$_COOKIE['pays'];
