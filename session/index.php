@@ -11,6 +11,8 @@ $_SESSION['age'] = 24;
 setcookie('pseudo', 'Jean', time() + 3600, null, null, false, true);
 
 setcookie('pays', 'France', time() + 3600, null, null, false, true); // On écrit un autre cookie...
+
+//On peut modifier un cookie refaisant un appel à setcookie en gardant le même nom du cookie
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +32,6 @@ setcookie('pays', 'France', time() + 3600, null, null, false, true); // On écri
             <a href="mapage.php">Lien vers 'mapage'</a><br />
             <a href="monscript.php">Lien vers 'monscript'</a>
             <br />
-            <a href="informations.php">Lien vers 'informations'</a>
         </p>
     </body>
 </html>

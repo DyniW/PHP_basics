@@ -11,10 +11,16 @@ $monfichier = fopen('compteur.txt', 'r+');
 
 $pages_vues = fgets($monfichier); // On lit la première ligne (nombre de pages vues)
 $pages_vues += 1; // On augmente de 1 ce nombre de pages vues
-fseek($monfichier, 0); // On remet le curseur au début du fichier
+fseek($monfichier, 0); // On remet le curseur au début du fichier (position 0)
 fputs($monfichier, $pages_vues); // On écrit le nouveau nombre de pages vues
 
 echo '<p>Cette page a été vue ' . $pages_vues . ' fois !</p>';
 
 // 3 : quand on a fini de l'utiliser, on ferme le fichier
 fclose($monfichier);
+
+?>
+
+<p>
+    <a href="deconnexion.php">deconnexion</a>
+</p>
