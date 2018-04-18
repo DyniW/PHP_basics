@@ -4,7 +4,7 @@ include("bdd.php");
 
 if((!empty($_POST['pseudo'])) && (!empty($_POST['message'])))
 {
-    $req = $bdd->prepare('INSERT INTO minichat(pseudo, message) VALUES(:pseudo, :message)') or die(print_r($bdd->errorInfo()));
+    $req = $bdd->prepare('INSERT INTO minichat(pseudo, message, date) VALUES(:pseudo, :message, NOW())') or die(print_r($bdd->errorInfo()));
 
     $req->execute(array(
         'pseudo'  => htmlspecialchars($_POST['pseudo']),

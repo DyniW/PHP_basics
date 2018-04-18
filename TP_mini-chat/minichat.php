@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -45,11 +46,18 @@
 
         <p>
             <?php
-                $limit = $_POST['choix'];
-
                 include("bdd.php");
 
-                $reponse = $bdd->prepare('SELECT pseudo, message FROM minichat ORDER BY id DESC LIMIT 0, '.$limit) or die(print_r($bdd->errorInfo()));
+                if(isset($_POST['choix']))
+                {
+                    $limit = $_POST['choix'];
+                }
+                else
+                {
+                    $limit = 10;
+                }
+
+                $reponse = $bdd->prepare('SELECT pseudo, message, date FROM minichat ORDER BY id LIMIT 0, '.$limit) or die(print_r($bdd->errorInfo()));
 
                 $reponse->execute(array(
                     'pseudo',
@@ -59,7 +67,7 @@
                 echo '<ul>';
                 while($donnees = $reponse->fetch())
                 {
-                    echo '<li><em>'.htmlspecialchars($donnees['pseudo']).'</em> : '.htmlspecialchars($donnees['message']).'</li>';
+                    echo '<li>['.$donnees['date'].'] <em>'.htmlspecialchars($donnees['pseudo']).'</em> : '.htmlspecialchars($donnees['message']).'</li>';
                 }
                 echo '</ul>';
 
